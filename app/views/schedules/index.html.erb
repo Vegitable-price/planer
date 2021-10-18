@@ -1,0 +1,10 @@
+<div class="main contents">
+  <% @schedules.each do |schedule| %>
+    <div class="content_parts">
+      <p><%= schedule.title %></p>
+      <span class="text">
+        <%= schedule.text %>
+      </span>
+    </div>
+  <% end %>
+</div>
