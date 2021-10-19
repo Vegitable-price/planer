@@ -17,6 +17,15 @@ class SchedulesController < ApplicationController
     schedule.destroy
   end
 
+  def edit
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def update
+    schedule = Schedule.find(params[:id])
+    schedule.update(schedule_params)
+  end
+
   private
   def schedule_params
     params.require(:schedule).permit(:title, :text)
