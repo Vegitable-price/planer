@@ -1,0 +1,15 @@
+<div class="main contents">
+  <div class="contents_part">
+    <ul class="more_list">
+      <li>
+        <%= link_to '編集', edit_schedule_path(@schedule.id), method: :get %>
+      </li>
+      <li>
+        <%= link_to '削除', schedule_path(@schedule.id), method: :delete %>
+      </li>
+    </ul>
+  </div>
+  <p><%= @schedule.title%></p>
+  <span class="text"><%= @schedule.text%>
+  </span>
+</div>

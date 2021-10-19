@@ -1,4 +1,5 @@
 class SchedulesController < ApplicationController
+  before_action :set_schedule, only: [:edit, :show]
  
   def index
     @schedules = Schedule.all
@@ -18,7 +19,6 @@ class SchedulesController < ApplicationController
   end
 
   def edit
-    @schedule = Schedule.find(params[:id])
   end
 
   def update
@@ -26,9 +26,16 @@ class SchedulesController < ApplicationController
     schedule.update(schedule_params)
   end
 
+  def show
+  end
+
   private
   def schedule_params
     params.require(:schedule).permit(:title, :text)
+  end
+  
+  def set_schedule
+    @schedule = Schedule.find(params[:id])
   end
   
 end
