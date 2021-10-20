@@ -6,12 +6,14 @@
           <li>
             <%= link_to '詳細', schedule_path(schedule.id), method: :get %>
           </li>
-          <li>
-            <%= link_to '編集', edit_schedule_path(schedule.id), method: :get %>
-          </li>
-          <li>
-            <%= link_to '削除', schedule_path(schedule.id), method: :delete %>
-          </li>
+          <% if user_signed_in? && current_user.id == schedule.user_id %>
+            <li>
+              <%= link_to '編集', edit_schedule_path(schedule.id), method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', schedule_path(schedule.id), method: :delete %>
+            </li>
+          <% end %>
         </ul>
       </div>
       <p><%= schedule.title %></p>
