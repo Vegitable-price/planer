@@ -1,5 +1,6 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:edit, :show]
+  before_action :move_to_index, except: [:index, :show]
  
   def index
     @schedules = Schedule.all
@@ -37,5 +38,10 @@ class SchedulesController < ApplicationController
   def set_schedule
     @schedule = Schedule.find(params[:id])
   end
-  
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end 
+  end
 end
