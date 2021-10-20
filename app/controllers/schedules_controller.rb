@@ -3,7 +3,7 @@ class SchedulesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
  
   def index
-    @schedules = Schedule.all
+    @schedules = Schedule.includes(:user)
   end
 
   def new
@@ -32,7 +32,7 @@ class SchedulesController < ApplicationController
 
   private
   def schedule_params
-    params.require(:schedule).permit(:title, :text)
+    params.require(:schedule).permit(:title, :text).merge(user_id: current_user.id)
   end
   
   def set_schedule
