@@ -1,10 +1,6 @@
 <div class="main contents">
   <div class="post">
     <h3>作成する</h3>
-    <%= form_with(model: @schedule, local: true) do |form| %>
-      <%= form.text_field :title, placeholder: "日付" %>
-      <%= form.text_field :text, placeholder: "内容"%>
-      <%= form.submit "作成" %>
-    <% end %>
+    <%= render partial: "form", locals: { schedule: @schedule } %>
   </div>
 </div>
