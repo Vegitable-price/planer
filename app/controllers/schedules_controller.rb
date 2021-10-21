@@ -3,7 +3,7 @@ class SchedulesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
  
   def index
-    @schedules = Schedule.includes(:user)
+    @schedules = Schedule.includes(:user).order("created_at DESC")
   end
 
   def new
