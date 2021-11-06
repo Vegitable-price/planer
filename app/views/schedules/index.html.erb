@@ -1,5 +1,15 @@
-<div class="main contents">
+<header>
+  <%= render "shared/header" %>
+</header>
+<div class="main_contents">
+
   <% @schedules.each do |schedule| %>
     <%= render partial: "schedule", locals: { schedule: schedule } %>
   <% end %>
+
 </div>
+<footer>
+      <p>
+        Planner
+      </p>
+</footer>

@@ -1,21 +1,11 @@
 <div class="content_parts">
-      <div class="delete">
-        <ul class="more_list">
-          <li>
-            <%= link_to '詳細', schedule_path(schedule.id), method: :get %>
-          </li>
-          <% if user_signed_in? && current_user.id == schedule.user_id %>
-            <li>
-              <%= link_to '編集', edit_schedule_path(schedule.id), method: :get %>
-            </li>
-            <li>
-              <%= link_to '削除', schedule_path(schedule.id), method: :delete %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-      <p><%= schedule.title %></p>
-      <span class="text">
-        <%= schedule.text %>
-      </span>
+  <% if user_signed_in? && current_user.id == schedule.user_id %>
+    <p><%= link_to schedule.title, edit_schedule_path(schedule.id), method: :get, class: "title" %></p>
+    <span class="text">
+      <%= schedule.text %>
+    </span>
+    <div class="delete_contents">
+      <%= link_to '削除', schedule_path(schedule.id), method: :delete, class: "delete" %>
     </div>
+  <% end %>
+</div>
