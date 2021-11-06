@@ -1,5 +1,6 @@
 <%= form_with(model: @schedule, local: true) do |form| %>
       <%= form.text_field :title, placeholder: "日付" %>
-      <%= form.text_field :text, placeholder: "内容"%>
+      <%= form.text_field :text, placeholder: "内容" %>
+      <%= form.text_field :memo, placeholder: "備考" %>
       <%= form.submit "作成" %>
     <% end %>
