@@ -1,6 +1,7 @@
 class SchedulesController < ApplicationController
-  before_action :set_schedule, only: [:edit, :show]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :authenticate_user!
+  before_action :set_schedule, only: [:update, :destroy, :edit]
+  before_action :move_to_index, except: [:index]
  
   def index
     @schedules = Schedule.includes(:user).order("created_at DESC")
@@ -27,12 +28,9 @@ class SchedulesController < ApplicationController
     schedule.update(schedule_params)
   end
 
-  def show
-  end
-
   private
   def schedule_params
-    params.require(:schedule).permit(:title, :text).merge(user_id: current_user.id)
+    params.require(:schedule).permit(:title, :text, :memo).merge(user_id: current_user.id)
   end
   
   def set_schedule
