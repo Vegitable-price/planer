@@ -1,0 +1,41 @@
+.root {
+  position: fixed;
+  top: 20px;
+  font-size: 25px;
+  padding: 10px;
+}
+
+h4 {
+  display: flex;
+  position: fixed;
+  top: 0;
+  margin-left: 300px;
+  font-size: 25px;
+}
+
+.date {
+  height: 30px;
+  width: 150px;
+  margin-top: 100px;
+  margin-left: 40px;
+}
+
+.schedule_name {
+  height: 30px;
+  width: 400px;
+  margin-left: 30px;
+}
+
+.schedule_detail {
+  height: 200px;
+  width: 590px;
+  margin-top: 30px;
+  margin-left: 40px;
+}
+
+.edit_complete {
+  height: 30px;
+  width: 100px;
+  margin-top: 30px;
+  margin-left: 300px;
+}

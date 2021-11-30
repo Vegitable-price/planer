@@ -1,0 +1,28 @@
+body {
+  background-color: black;
+}
+
+.content_parts {
+  border: 1px solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 25px;
+  padding-left: 10px;
+}
+
+.text {
+  padding-top: 25px;
+  font-size: 25px;
+}
+
+.delete_contents {
+  padding-top: 25px;
+  padding-right: 10px;
+}
+.delete {
+  font-size: 25px;
+  color: orangered;
+}

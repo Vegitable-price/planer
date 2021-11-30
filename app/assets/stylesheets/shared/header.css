@@ -1,0 +1,22 @@
+.top_bar {
+  display: block;
+  text-align: right;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.user_bar.grid-6 {
+  margin-bottom: 10px;
+}
+
+.user_delete {
+  padding-right: 20px;
+}
+
+.create {
+padding-right: 10px;
+}
+
