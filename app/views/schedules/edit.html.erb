@@ -1,7 +1,9 @@
 <div class="main contents">
-  <div class="content part">
-    <%= link_to '戻る', root_path %>
-    <h3>編集する</h3>
-    <%= render partial: "form", locals: { schedule: @schedule } %>
+  <div class="edit_contents">
+    <%= link_to '戻る', root_path, class: "root"%>
+    <h4>編集する</h4>
+    <div class="edit_forms">
+      <%= render partial: "form", locals: { schedule: @schedule } %>
+    </div>
   </div>
 </div>
