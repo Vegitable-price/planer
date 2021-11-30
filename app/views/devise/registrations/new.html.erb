@@ -33,7 +33,9 @@
           <label class="form-text">パスワード(確認)</label>
           <span class="indispensable">必須</span>
         </div>
-      <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+        <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+
+      
       </div>
 
       <div class="Sign_in">
@@ -42,5 +44,8 @@
     <% end %>
 
     <%= link_to "ログイン", new_user_session_path, class:"Log_in" %>
+    <%= link_to "Googleで登録", user_google_oauth2_omniauth_authorize_path, method: :post, class:"Google" %>
+
+    
   </div>
 </div>
